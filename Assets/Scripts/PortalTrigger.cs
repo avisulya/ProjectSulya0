@@ -7,10 +7,14 @@ public class PortalTrigger : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		// Check if the object entering is the player
-		if (other.CompareTag("Player"))
+		// Player entered portal trigger; could show UI prompt here
+	}
+
+	private void OnTriggerStay(Collider other)
+	{
+		// When player is inside the trigger and presses E, change scene
+		if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
 		{
-			// Load the specified scene
 			SceneManager.LoadScene(sceneName);
 		}
 	}
