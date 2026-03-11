@@ -7,12 +7,12 @@ public class PortalTrigger : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		// Player entered portal trigger; could show UI prompt here
+		// Player entered portal trigger; show UI popup
 	}
 
 	private void OnTriggerStay(Collider other)
 	{
-		// When player is inside the trigger and presses E, change scene
+		// While the player is inside the triggered collider, press E to teleport to the scene
 		if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
 		{
 			SceneManager.LoadScene(sceneName);
